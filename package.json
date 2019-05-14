@@ -1,0 +1,31 @@
+{
+  "name": "arkham-bag",
+  "version": "0.0.1",
+  "description": "Arkham Horror LCG Chaos Bag evaluation",
+  "main": "index.js",
+  "author": "Akaan Qualrus <akaan.qualrus@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --open --config webpack.dev.ts",
+    "build": "webpack --mode production --config webpack.prod.ts"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/webpack": "^4.4.31",
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-immutable": "^5.5.2",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
