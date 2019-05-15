@@ -7,10 +7,16 @@ export interface BagState {
 
 // Action names
 export const ADD_TOKEN = 'ADD_TOKEN';
+export const REMOVE_TOKEN = 'REMOVE_TOKEN';
 
 interface AddTokenAction {
   type: typeof ADD_TOKEN;
   token: Token;
 }
 
-export type BagActionTypes = AddTokenAction;
+interface RemoveTokenAction {
+  type: typeof REMOVE_TOKEN;
+  token: Token;
+}
+
+export type BagActionTypes = AddTokenAction | RemoveTokenAction;

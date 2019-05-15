@@ -1,11 +1,12 @@
 import { Bag, Token } from 'arkham-odds';
 import * as React from 'react';
-import { addToken } from '../store/bag/actions';
+import { addToken, removeToken } from '../store/bag/actions';
 import { ChaosBagLine } from './ChaosBagLine';
 
 interface ChaosBagProps {
   bagContents: Bag;
   addToken: typeof addToken;
+  removeToken: typeof removeToken;
 }
 
 const availableTokens: Token[] = [
@@ -49,7 +50,8 @@ export class ChaosBag extends React.Component<ChaosBagProps> {
             key={token}
             token={token}
             count={tokenNumber}
-            onAdd={this.props.addToken.bind(this, token)} />);
+            onAdd={this.props.addToken.bind(this, token)}
+            onRemove={this.props.removeToken.bind(this, token)} />);
       });
 
       return (
