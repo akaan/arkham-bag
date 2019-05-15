@@ -16,3 +16,7 @@ pack-plugin awesome-typescript-loader --dev`
 * Added ts-node with `yarn add ts-node --dev`
 * Added TSLint conf with `touch tslint.json`
 * Added .gitignore with `touch .gitignore`
+* Configure git with `git config --local user.name "Akaan Qualrus"` and `git config --local user.email "akaan.qualrus@gmail.com"`
+* Configure remote with `git remote add origin git@github.com-akaan:akaan/arkham-bag.git`
+* Push with `git push -u origin master`
+* Add React Bootstrap with ` yarn add react-bootstrap`
