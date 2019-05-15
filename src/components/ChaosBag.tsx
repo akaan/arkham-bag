@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Bag, Token } from "arkham-odds";
-import { ChaosBagLine } from "./ChaosBagLine";
-import { addToken } from "../store/bag/actions";
+import { Bag, Token } from 'arkham-odds';
+import * as React from 'react';
+import { addToken } from '../store/bag/actions';
+import { ChaosBagLine } from './ChaosBagLine';
 
 interface ChaosBagProps {
   bagContents: Bag;
@@ -23,23 +23,23 @@ const availableTokens: Token[] = [
   Token.CULTIST,
   Token.TABLET,
   Token.ELDER_THING,
-  Token.AUTOFAIL
+  Token.AUTOFAIL,
 ];
 
 export class ChaosBag extends React.Component<ChaosBagProps> {
   public render() {
 
-      let countBy = (grouped: Map<Token, number>, item: Token) => {
+      const countBy = (grouped: Map<Token, number>, item: Token) => {
         if (grouped.has(item)) {
           return grouped.set(item, grouped.get(item) + 1);
         } else {
           return grouped.set(item, 1);
         }
       };
-      let tokenNumbers = this.props.bagContents.getTokens().reduce(countBy, new Map());
+      const tokenNumbers = this.props.bagContents.getTokens().reduce(countBy, new Map());
 
-      let lines: JSX.Element[] = [];
-      availableTokens.forEach(token => {
+      const lines: JSX.Element[] = [];
+      availableTokens.forEach((token) => {
         let tokenNumber = 0;
         if (tokenNumbers.has(token)) {
           tokenNumber = tokenNumbers.get(token);
@@ -53,7 +53,7 @@ export class ChaosBag extends React.Component<ChaosBagProps> {
       });
 
       return (
-        <table className="table">
+        <table className='table'>
           <tbody>
             {lines}
           </tbody>

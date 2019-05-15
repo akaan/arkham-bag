@@ -1,12 +1,12 @@
-import * as React from "react";
-import { Container } from "react-bootstrap";
-import { AppHeader } from "./AppHeader";
-import { connect } from "react-redux";
-import { BagState } from "../store/bag/types";
-import { AppState } from "../store";
-import { ChaosBag } from "./ChaosBag";
-import { addToken } from "../store/bag/actions";
-import { Token } from "arkham-odds";
+import { Token } from 'arkham-odds';
+import * as React from 'react';
+import { Container } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { AppState } from '../store';
+import { addToken } from '../store/bag/actions';
+import { BagState } from '../store/bag/types';
+import { AppHeader } from './AppHeader';
+import { ChaosBag } from './ChaosBag';
 
 interface AppProps {
   bag: BagState;
@@ -28,10 +28,10 @@ class App extends React.Component<AppProps> {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  bag: state.bag
+  bag: state.bag,
 });
 
 export default connect(
   mapStateToProps,
-  { addToken }
+  { addToken },
 )(App);

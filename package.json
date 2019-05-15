@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "webpack-dev-server --open --config webpack.dev.ts",
     "build": "webpack --mode production --config webpack.prod.ts",
-    "lint": "tslint -c tslint.json \"src/**/*.ts\"",
-    "lint:fix": "tslint --fix -c tslint.json \"src/**/*.ts\""
+    "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "tslint --fix -c tslint.json \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "arkham-odds": "^0.4.0",
