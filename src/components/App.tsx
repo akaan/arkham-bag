@@ -1,15 +1,17 @@
 import { Token } from 'arkham-odds';
 import * as React from 'react';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { AppState } from '../store';
-import { addToken, removeToken } from '../store/bag/actions';
+import { addToken, removeToken, setBagContents } from '../store/bag/actions';
 import { BagState } from '../store/bag/types';
 import { AppHeader } from './AppHeader';
 import { ChaosBag } from './ChaosBag';
+import { ChaosBagSelector } from './ChaosBagSelector';
 
 interface AppProps {
   bag: BagState;
+  setBagContents: typeof setBagContents;
   addToken: typeof addToken;
   removeToken: typeof removeToken;
 }
@@ -27,10 +29,16 @@ class App extends React.Component<AppProps> {
     return <div>
       <AppHeader />
       <Container>
-        <ChaosBag
-          bagContents={this.props.bag.contents}
-          addToken={this.props.addToken}
-          removeToken={this.props.removeToken} />
+        <Row>
+          <Col>
+            <ChaosBagSelector setBagContents={this.props.setBagContents} />
+            <ChaosBag
+              bagContents={this.props.bag.contents}
+              addToken={this.props.addToken}
+              removeToken={this.props.removeToken} />
+          </Col>
+          <Col><p>Chart here</p></Col>
+        </Row>
       </Container>
     </div>;
   }
@@ -42,5 +50,5 @@ const mapStateToProps = (state: AppState) => ({
 
 export default connect(
   mapStateToProps,
-  { addToken, removeToken },
+  { setBagContents, addToken, removeToken },
 )(App);
