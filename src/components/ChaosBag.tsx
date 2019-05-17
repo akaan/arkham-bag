@@ -61,6 +61,13 @@ export class ChaosBag extends React.Component<ChaosBagProps> {
     return (
       <Container className="p-3">
         <table className="table table-sm">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>#</th>
+              <th />
+            </tr>
+          </thead>
           <tbody>{lines}</tbody>
         </table>
       </Container>

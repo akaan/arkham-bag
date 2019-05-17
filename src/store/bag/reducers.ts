@@ -11,7 +11,8 @@ import {
   BagActionTypes,
   BagState,
   REMOVE_TOKEN,
-  SET_BAG_CONTENTS
+  SET_BAG_CONTENTS,
+  SET_TOKEN_EFFECT
 } from "./types";
 
 const initialState: BagState = {
@@ -43,6 +44,10 @@ export function bagReducer(
     case REMOVE_TOKEN:
       return Object.assign({}, state, {
         contents: state.contents.removeToken(action.token)
+      });
+    case SET_TOKEN_EFFECT:
+      return Object.assign({}, state, {
+        effects: state.effects.setEffect(action.token, action.effect)
       });
     default:
       return state;

@@ -1,4 +1,4 @@
-import { Bag, Token, TokenEffects } from "arkham-odds";
+import { Bag, Token, TokenEffect, TokenEffects } from "arkham-odds";
 
 // Bag state's slice of state
 export interface BagState {
@@ -10,6 +10,7 @@ export interface BagState {
 export const SET_BAG_CONTENTS = "SET_BAG_CONTENTS";
 export const ADD_TOKEN = "ADD_TOKEN";
 export const REMOVE_TOKEN = "REMOVE_TOKEN";
+export const SET_TOKEN_EFFECT = "SET_TOKEN_EFFECT";
 
 interface SetBagContentsAction {
   type: typeof SET_BAG_CONTENTS;
@@ -26,7 +27,14 @@ interface RemoveTokenAction {
   token: Token;
 }
 
+interface SetTokenEffectAction {
+  type: typeof SET_TOKEN_EFFECT;
+  token: Token;
+  effect: TokenEffect;
+}
+
 export type BagActionTypes =
   | SetBagContentsAction
   | AddTokenAction
-  | RemoveTokenAction;
+  | RemoveTokenAction
+  | SetTokenEffectAction;

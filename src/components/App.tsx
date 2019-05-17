@@ -3,17 +3,25 @@ import * as React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { AppState } from "../store";
-import { addToken, removeToken, setBagContents } from "../store/bag/actions";
+import {
+  addToken,
+  removeToken,
+  setBagContents,
+  setTokenEffect
+} from "../store/bag/actions";
 import { BagState } from "../store/bag/types";
 import { AppHeader } from "./AppHeader";
 import { ChaosBag } from "./ChaosBag";
 import { ChaosBagSelector } from "./ChaosBagSelector";
+import { TokenEffectEditor } from "./TokenEffectEditor";
+import { OddsTable } from "./OddsTable";
 
 interface AppProps {
   bag: BagState;
   setBagContents: typeof setBagContents;
   addToken: typeof addToken;
   removeToken: typeof removeToken;
+  setTokenEffect: typeof setTokenEffect;
 }
 
 class App extends React.Component<AppProps> {
@@ -40,7 +48,14 @@ class App extends React.Component<AppProps> {
               />
             </Col>
             <Col>
-              <p>Chart here</p>
+              <TokenEffectEditor
+                tokenEffects={this.props.bag.effects}
+                setTokenEffect={this.props.setTokenEffect}
+              />
+              <OddsTable
+                bagContents={this.props.bag.contents}
+                tokenEffects={this.props.bag.effects}
+              />
             </Col>
           </Row>
         </Container>
@@ -55,5 +70,5 @@ const mapStateToProps = (state: AppState) => ({
 
 export default connect(
   mapStateToProps,
-  { setBagContents, addToken, removeToken }
+  { setBagContents, addToken, removeToken, setTokenEffect }
 )(App);
