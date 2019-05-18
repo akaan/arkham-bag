@@ -1,6 +1,6 @@
 import { Token, TokenEffect } from "arkham-odds";
 import React = require("react");
-import { setTokenEffect } from "../store/bag/actions";
+import { setTokenEffect } from "../../store/bag/actions";
 import { TokenEffectSelector } from "./TokenEffectSelector";
 
 interface TokenEffectEditorLineProps {

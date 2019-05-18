@@ -11,13 +11,13 @@ import {
 } from "../store/bag/actions";
 import { BagState } from "../store/bag/types";
 import { AppHeader } from "./AppHeader";
-import { ChaosBag } from "./ChaosBag";
-import { ChaosBagSelector } from "./ChaosBagSelector";
-import { TokenEffectEditor } from "./TokenEffectEditor";
+import { ChaosBag } from "./chaosbag/ChaosBag";
+import { ChaosBagSelector } from "./chaosbag/ChaosBagSelector";
 import { OddsTable } from "./OddsTable";
+import { TokenEffectEditor } from "./tokeneffects/TokenEffectEditor";
 
 interface AppProps {
-  bag: BagState;
+  bagAndEffects: BagState;
   setBagContents: typeof setBagContents;
   addToken: typeof addToken;
   removeToken: typeof removeToken;
@@ -42,19 +42,19 @@ class App extends React.Component<AppProps> {
             <Col>
               <ChaosBagSelector setBagContents={this.props.setBagContents} />
               <ChaosBag
-                bagContents={this.props.bag.contents}
+                bagContents={this.props.bagAndEffects.contents}
                 addToken={this.props.addToken}
                 removeToken={this.props.removeToken}
               />
             </Col>
             <Col>
               <TokenEffectEditor
-                tokenEffects={this.props.bag.effects}
+                tokenEffects={this.props.bagAndEffects.effects}
                 setTokenEffect={this.props.setTokenEffect}
               />
               <OddsTable
-                bagContents={this.props.bag.contents}
-                tokenEffects={this.props.bag.effects}
+                bagContents={this.props.bagAndEffects.contents}
+                tokenEffects={this.props.bagAndEffects.effects}
               />
             </Col>
           </Row>
@@ -65,7 +65,7 @@ class App extends React.Component<AppProps> {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  bag: state.bag
+  bagAndEffects: state.bag
 });
 
 export default connect(

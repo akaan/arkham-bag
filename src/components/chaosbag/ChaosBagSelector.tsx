@@ -1,7 +1,7 @@
 import { Bags, Token } from "arkham-odds";
 import * as React from "react";
 import { Container } from "react-bootstrap";
-import { setBagContents } from "../store/bag/actions";
+import { setBagContents } from "../../store/bag/actions";
 
 interface ChaosBagSelectorProps {
   setBagContents: typeof setBagContents;

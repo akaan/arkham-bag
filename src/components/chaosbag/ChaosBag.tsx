@@ -1,7 +1,7 @@
 import { Bag, Token } from "arkham-odds";
 import * as React from "react";
 import { Container } from "react-bootstrap";
-import { addToken, removeToken } from "../store/bag/actions";
+import { addToken, removeToken } from "../../store/bag/actions";
 import { ChaosBagLine } from "./ChaosBagLine";
 
 interface ChaosBagProps {
