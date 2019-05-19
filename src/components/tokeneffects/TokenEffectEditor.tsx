@@ -1,6 +1,5 @@
 import { Token, TokenEffects } from "arkham-odds";
 import React = require("react");
-import { Container } from "react-bootstrap";
 import { setTokenEffect } from "../../store/bag/actions";
 import { TokenEffectEditorLine } from "./TokenEffectEditorLine";
 
@@ -24,7 +23,7 @@ export class TokenEffectEditor extends React.Component<TokenEffectEditorProps> {
 
   public render() {
     return (
-      <Container className="p-3">
+      <div className="container p-3">
         <table className="table table-sm">
           <thead>
             <tr>
@@ -45,7 +44,7 @@ export class TokenEffectEditor extends React.Component<TokenEffectEditorProps> {
             })}
           </tbody>
         </table>
-      </Container>
+      </div>
     );
   }
 }

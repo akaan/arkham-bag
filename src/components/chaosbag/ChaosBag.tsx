@@ -1,6 +1,5 @@
 import { Bag, Token } from "arkham-odds";
 import * as React from "react";
-import { Container } from "react-bootstrap";
 import { addToken, removeToken } from "../../store/bag/actions";
 import { ChaosBagLine } from "./ChaosBagLine";
 
@@ -59,7 +58,7 @@ export class ChaosBag extends React.Component<ChaosBagProps> {
     });
 
     return (
-      <Container className="p-3">
+      <div className="container p-3">
         <table className="table table-sm">
           <thead>
             <tr>
@@ -70,7 +69,7 @@ export class ChaosBag extends React.Component<ChaosBagProps> {
           </thead>
           <tbody>{lines}</tbody>
         </table>
-      </Container>
+      </div>
     );
   }
 }

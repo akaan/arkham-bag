@@ -1,6 +1,5 @@
 import { Token } from "arkham-odds";
 import * as React from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { AppState } from "../store";
 import {
@@ -37,17 +36,17 @@ class App extends React.Component<AppProps> {
     return (
       <div>
         <AppHeader />
-        <Container>
-          <Row>
-            <Col>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
               <ChaosBagSelector setBagContents={this.props.setBagContents} />
               <ChaosBag
                 bagContents={this.props.bagAndEffects.contents}
                 addToken={this.props.addToken}
                 removeToken={this.props.removeToken}
               />
-            </Col>
-            <Col>
+            </div>
+            <div className="col-sm">
               <TokenEffectEditor
                 tokenEffects={this.props.bagAndEffects.effects}
                 setTokenEffect={this.props.setTokenEffect}
@@ -56,9 +55,9 @@ class App extends React.Component<AppProps> {
                 bagContents={this.props.bagAndEffects.contents}
                 tokenEffects={this.props.bagAndEffects.effects}
               />
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import { Token } from "arkham-odds";
 import * as React from "react";
-import { Button } from "react-bootstrap";
 
 interface ChaosBagLineProps {
   token: Token;
@@ -16,12 +15,20 @@ export class ChaosBagLine extends React.Component<ChaosBagLineProps> {
         <td>{this.props.token}</td>
         <td>{this.props.count}</td>
         <td>
-          <Button variant="success" onClick={this.props.onAdd}>
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={this.props.onAdd}
+          >
             +
-          </Button>
-          <Button variant="danger" onClick={this.props.onRemove}>
-            -
-          </Button>
+          </button>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={this.props.onRemove}
+          >
+            +
+          </button>
         </td>
       </tr>
     );
