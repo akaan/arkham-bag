@@ -1,6 +1,7 @@
 import { Bags, Token } from "arkham-odds";
 import * as React from "react";
 import { setBagContents } from "../../store/bag/actions";
+import "./ChaosBagSelector.scss";
 
 interface ChaosBagSelectorProps {
   setBagContents: typeof setBagContents;
@@ -60,7 +61,7 @@ export class ChaosBagSelector extends React.Component<ChaosBagSelectorProps> {
 
   public render() {
     return (
-      <div className=" container p-3">
+      <div className="chaos-bag-selector">
         <select onChange={this.handleSelection}>
           {Array.from(bagsMap.keys()).map(k => (
             <option key={k} value={k}>

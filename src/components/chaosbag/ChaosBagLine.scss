@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
+.chaos-bag-line {
+  button {
+    @extend .btn;
+    &.add-token {
+      @extend .btn-success;
+    }
+    &.remove-token {
+      @extend .btn-danger;
+    }
+  }
+}

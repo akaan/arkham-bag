@@ -1,0 +1,6 @@
+@import "~bootstrap/scss/bootstrap";
+
+.chaos-bag-selector {
+  @extend .container;
+  @extend .p-3;
+}
