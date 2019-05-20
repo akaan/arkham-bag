@@ -18,7 +18,11 @@ export class PullProtocolSelector extends React.Component<
     return (
       <form className="pull-protocol-selector">
         <label htmlFor="select-protocol">Choose how you pull</label>
-        <select id="select-protocol" onChange={this.functionChanged}>
+        <select
+          id="select-protocol"
+          onChange={this.functionChanged}
+          value={this.props.pullProtocolId}
+        >
           {PULL_PROTOCOLS.map(def => {
             return (
               <option key={def.id} value={def.id}>

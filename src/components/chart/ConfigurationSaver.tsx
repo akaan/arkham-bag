@@ -50,7 +50,7 @@ export class ConfigurationSaver extends React.Component<
     });
   }
 
-  private onSave() {
+  private onSave(event: React.MouseEvent<HTMLButtonElement>) {
     this.props.saveConfiguration(
       this.state.configurationTitle,
       this.props.bagState.contents,
@@ -58,5 +58,6 @@ export class ConfigurationSaver extends React.Component<
       this.props.bagState.pullProtocol
     );
     this.setState({ configurationTitle: "" });
+    event.preventDefault();
   }
 }
