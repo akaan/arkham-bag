@@ -1,4 +1,4 @@
-import { Bag, Token, TokenEffects } from "arkham-odds";
+import { Bag, TokenEffects } from "arkham-odds";
 import * as React from "react";
 import { connect } from "react-redux";
 import { AppState } from "../store";
@@ -14,12 +14,12 @@ import { SystemState } from "../store/system/types";
 import { AppHeader } from "./AppHeader";
 import { ChaosBag } from "./chaosbag/ChaosBag";
 import { ChaosBagSelector } from "./chaosbag/ChaosBagSelector";
+import { ConfigurationSaver } from "./ConfigurationSaver";
 import { OddsChart } from "./OddsChart";
 import { TokenEffectEditor } from "./tokeneffects/TokenEffectEditor";
-import { ConfigurationSaver } from "./ConfigurationSaver";
 
 interface AppProps {
-  bagAndEffects: BagState;
+  bag: BagState;
   system: SystemState;
   setBagContents: typeof setBagContents;
   addToken: typeof addToken;
@@ -31,7 +31,6 @@ interface AppProps {
 class App extends React.Component<AppProps> {
   constructor(props: AppProps) {
     super(props);
-    this.onSaveConfig = this.onSaveConfig.bind(this);
   }
 
   public render() {
@@ -41,27 +40,26 @@ class App extends React.Component<AppProps> {
         <div className="app">
           <div>
             <OddsChart
-              bagContents={this.props.bagAndEffects.contents}
-              tokenEffects={this.props.bagAndEffects.effects}
+              bagState={this.props.bag}
               savedConfigurations={this.props.system.savedConfigs}
             />
           </div>
           <div>
             <div>
               <ConfigurationSaver
-                bagState={this.props.bagAndEffects}
+                bagState={this.props.bag}
                 saveConfiguration={this.props.saveConfiguration}
               />
               <ChaosBagSelector setBagContents={this.props.setBagContents} />
               <ChaosBag
-                bagContents={this.props.bagAndEffects.contents}
+                bagContents={this.props.bag.contents}
                 addToken={this.props.addToken}
                 removeToken={this.props.removeToken}
               />
             </div>
             <div>
               <TokenEffectEditor
-                tokenEffects={this.props.bagAndEffects.effects}
+                tokenEffects={this.props.bag.effects}
                 setTokenEffect={this.props.setTokenEffect}
               />
             </div>
@@ -70,18 +68,10 @@ class App extends React.Component<AppProps> {
       </div>
     );
   }
-
-  private onSaveConfig() {
-    this.props.saveConfiguration(
-      "Saved configuration",
-      new Bag(this.props.bagAndEffects.contents.getTokens()),
-      new TokenEffects().merge(this.props.bagAndEffects.effects)
-    );
-  }
 }
 
 const mapStateToProps = (state: AppState) => ({
-  bagAndEffects: state.bag,
+  bag: state.bag,
   system: state.system
 });
 

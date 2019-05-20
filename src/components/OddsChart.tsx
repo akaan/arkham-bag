@@ -3,16 +3,11 @@ import { Bag, odds, success, TokenEffects } from "arkham-odds";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import React = require("react");
-
-interface SavedConfiguration {
-  title: string;
-  bagContents: Bag;
-  tokenEffects: TokenEffects;
-}
+import { BagState } from "../store/bag/types";
+import { SavedConfiguration } from "../store/system/types";
 
 interface OddsChartProps {
-  bagContents: Bag;
-  tokenEffects: TokenEffects;
+  bagState: BagState;
   savedConfigurations: SavedConfiguration[];
 }
 
@@ -31,7 +26,13 @@ export class OddsChart extends React.Component<OddsChartProps> {
         },
         data: skillMinusDiff.map(
           d =>
-            100 * odds(1, config.bagContents, config.tokenEffects, success(d))
+            100 *
+            odds(
+              1,
+              config.bagContents,
+              config.tokenEffects,
+              config.outcomeFunction(d)
+            )
         )
       });
     });
@@ -45,7 +46,12 @@ export class OddsChart extends React.Component<OddsChartProps> {
       data: skillMinusDiff.map(
         d =>
           100 *
-          odds(1, this.props.bagContents, this.props.tokenEffects, success(d))
+          odds(
+            1,
+            this.props.bagState.contents,
+            this.props.bagState.effects,
+            this.props.bagState.outcomeFunction(d)
+          )
       )
     });
 

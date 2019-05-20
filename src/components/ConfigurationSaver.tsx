@@ -50,7 +50,8 @@ export class ConfigurationSaver extends React.Component<
     this.props.saveConfiguration(
       this.state.configurationTitle,
       this.props.bagState.contents,
-      this.props.bagState.effects
+      this.props.bagState.effects,
+      this.props.bagState.outcomeFunction
     );
     this.setState({ configurationTitle: "" });
   }

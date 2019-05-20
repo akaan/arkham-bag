@@ -3,6 +3,7 @@ import {
   Bags,
   DefaultTokenEffects,
   Modifier,
+  success,
   Token,
   TokenEffects
 } from "arkham-odds";
@@ -25,7 +26,8 @@ const initialState: BagState = {
       [Token.ELDER_THING, new Modifier(-2)],
       [Token.ELDER_SIGN, new Modifier(2)]
     ])
-  )
+  ),
+  outcomeFunction: success
 };
 
 export function bagReducer(

@@ -1,9 +1,11 @@
 import { Bag, Token, TokenEffect, TokenEffects } from "arkham-odds";
+import { OutcomeFunction } from "arkham-odds/lib/OutcomeFunction";
 
 // Bag state's slice of state
 export interface BagState {
   contents: Bag;
   effects: TokenEffects;
+  outcomeFunction: (diff: number) => OutcomeFunction;
 }
 
 // Action names
