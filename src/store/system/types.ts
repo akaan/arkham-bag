@@ -1,11 +1,11 @@
 import { Bag, TokenEffects } from "arkham-odds";
-import { OutcomeFunction } from "arkham-odds/lib/OutcomeFunction";
+import { PullProtocol } from "../bag/types";
 
 export interface SavedConfiguration {
   title: string;
   bagContents: Bag;
   tokenEffects: TokenEffects;
-  outcomeFunction: (diff: number) => OutcomeFunction;
+  pullProtocol: PullProtocol;
 }
 
 export interface SystemState {

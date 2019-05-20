@@ -2,8 +2,10 @@ import { Token, TokenEffect } from "arkham-odds";
 import {
   ADD_TOKEN,
   BagActionTypes,
+  PullProtocol,
   REMOVE_TOKEN,
   SET_BAG_CONTENTS,
+  SET_PULL_PROTOCOL,
   SET_TOKEN_EFFECT
 } from "./types";
 
@@ -36,5 +38,12 @@ export function setTokenEffect(
     effect,
     token,
     type: SET_TOKEN_EFFECT
+  };
+}
+
+export function setPullProtocol(pullProtocol: PullProtocol): BagActionTypes {
+  return {
+    pullProtocol,
+    type: SET_PULL_PROTOCOL
   };
 }

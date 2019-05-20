@@ -5,6 +5,7 @@ import {
   addToken,
   removeToken,
   setBagContents,
+  setPullProtocol,
   setTokenEffect
 } from "../store/bag/actions";
 import { BagState } from "../store/bag/types";
@@ -15,6 +16,7 @@ import { ChaosBag } from "./chaosbag/ChaosBag";
 import { ChaosBagSelector } from "./chaosbag/ChaosBagSelector";
 import { ConfigurationSaver } from "./chart/ConfigurationSaver";
 import { OddsChart } from "./chart/OddsChart";
+import { PullProtocolSelector } from "./tokeneffects/PullProtocolSelector";
 import { TokenEffectEditor } from "./tokeneffects/TokenEffectEditor";
 
 interface AppProps {
@@ -24,6 +26,7 @@ interface AppProps {
   addToken: typeof addToken;
   removeToken: typeof removeToken;
   setTokenEffect: typeof setTokenEffect;
+  setPullProtocol: typeof setPullProtocol;
   saveConfiguration: typeof saveConfiguration;
 }
 
@@ -61,6 +64,10 @@ class App extends React.Component<AppProps> {
                 tokenEffects={this.props.bag.effects}
                 setTokenEffect={this.props.setTokenEffect}
               />
+              <PullProtocolSelector
+                pullProtocolId={this.props.bag.pullProtocol.id}
+                setPullProtocol={this.props.setPullProtocol}
+              />
             </div>
           </div>
         </div>
@@ -76,5 +83,12 @@ const mapStateToProps = (state: AppState) => ({
 
 export default connect(
   mapStateToProps,
-  { setBagContents, addToken, removeToken, setTokenEffect, saveConfiguration }
+  {
+    addToken,
+    removeToken,
+    saveConfiguration,
+    setBagContents,
+    setPullProtocol,
+    setTokenEffect
+  }
 )(App);

@@ -28,10 +28,10 @@ export class OddsChart extends React.Component<OddsChartProps> {
           d =>
             100 *
             odds(
-              1,
+              config.pullProtocol.numberOfTokensPulled,
               config.bagContents,
               config.tokenEffects,
-              config.outcomeFunction(d)
+              config.pullProtocol.outcomeFunctionWithDifficulty(d)
             )
         )
       });
@@ -47,10 +47,10 @@ export class OddsChart extends React.Component<OddsChartProps> {
         d =>
           100 *
           odds(
-            1,
+            this.props.bagState.pullProtocol.numberOfTokensPulled,
             this.props.bagState.contents,
             this.props.bagState.effects,
-            this.props.bagState.outcomeFunction(d)
+            this.props.bagState.pullProtocol.outcomeFunctionWithDifficulty(d)
           )
       )
     });

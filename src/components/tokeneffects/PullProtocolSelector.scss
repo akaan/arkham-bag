@@ -1,0 +1,6 @@
+.pull-protocol-selector {
+  @extend .container;
+  select {
+    @extend .form-control;
+  }
+}

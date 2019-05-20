@@ -3,16 +3,17 @@ import {
   Bags,
   DefaultTokenEffects,
   Modifier,
-  success,
   Token,
   TokenEffects
 } from "arkham-odds";
+import { PULL_PROTOCOLS } from "../../data/pull_protocols";
 import {
   ADD_TOKEN,
   BagActionTypes,
   BagState,
   REMOVE_TOKEN,
   SET_BAG_CONTENTS,
+  SET_PULL_PROTOCOL,
   SET_TOKEN_EFFECT
 } from "./types";
 
@@ -27,7 +28,7 @@ const initialState: BagState = {
       [Token.ELDER_SIGN, new Modifier(2)]
     ])
   ),
-  outcomeFunction: success
+  pullProtocol: PULL_PROTOCOLS.find(p => p.id === "none")
 };
 
 export function bagReducer(
@@ -50,6 +51,10 @@ export function bagReducer(
     case SET_TOKEN_EFFECT:
       return Object.assign({}, state, {
         effects: state.effects.setEffect(action.token, action.effect)
+      });
+    case SET_PULL_PROTOCOL:
+      return Object.assign({}, state, {
+        pullProtocol: action.pullProtocol
       });
     default:
       return state;
