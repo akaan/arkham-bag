@@ -1,9 +1,11 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { bagReducer } from "./bag/reducers";
+import { systemReducer } from "./system/reducers";
 
 const rootReducer = combineReducers({
-  bag: bagReducer
+  bag: bagReducer,
+  system: systemReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
