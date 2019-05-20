@@ -19,6 +19,7 @@ const availableTokens: Token[] = [
   Token.MINUS_FOUR,
   Token.MINUS_FIVE,
   Token.MINUS_SIX,
+  Token.MINUS_SEVEN,
   Token.MINUS_EIGHT,
   Token.SKULL,
   Token.CULTIST,
