@@ -1,10 +1,10 @@
 // tslint:disable:object-literal-sort-keys
-import { Bag, odds, success, TokenEffects } from "arkham-odds";
+import { odds } from "arkham-odds";
 import * as Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import React = require("react");
-import { BagState } from "../store/bag/types";
-import { SavedConfiguration } from "../store/system/types";
+import { BagState } from "../../store/bag/types";
+import { SavedConfiguration } from "../../store/system/types";
 
 interface OddsChartProps {
   bagState: BagState;

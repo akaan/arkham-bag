@@ -1,4 +1,3 @@
-import { Bag, TokenEffects } from "arkham-odds";
 import * as React from "react";
 import { connect } from "react-redux";
 import { AppState } from "../store";
@@ -14,8 +13,8 @@ import { SystemState } from "../store/system/types";
 import { AppHeader } from "./AppHeader";
 import { ChaosBag } from "./chaosbag/ChaosBag";
 import { ChaosBagSelector } from "./chaosbag/ChaosBagSelector";
-import { ConfigurationSaver } from "./ConfigurationSaver";
-import { OddsChart } from "./OddsChart";
+import { ConfigurationSaver } from "./chart/ConfigurationSaver";
+import { OddsChart } from "./chart/OddsChart";
 import { TokenEffectEditor } from "./tokeneffects/TokenEffectEditor";
 
 interface AppProps {

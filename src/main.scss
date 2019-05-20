@@ -5,9 +5,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./components/App";
 @import "./components/AppHeader";
-@import "./components/ConfigurationSaver";
-@import "./components/OddsTable";
 @import "./components/chaosbag/ChaosBag";
 @import "./components/chaosbag/ChaosBagLine";
 @import "./components/chaosbag/ChaosBagSelector";
+@import "./components/chart/ConfigurationSaver";
 @import "./components/tokeneffects/TokenEffectEditor";

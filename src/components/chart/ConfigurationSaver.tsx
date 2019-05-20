@@ -1,6 +1,6 @@
 import React = require("react");
-import { BagState } from "../store/bag/types";
-import { saveConfiguration } from "../store/system/actions";
+import { BagState } from "../../store/bag/types";
+import { saveConfiguration } from "../../store/system/actions";
 
 interface ConfigurationSaverProps {
   bagState: BagState;
