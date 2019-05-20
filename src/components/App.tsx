@@ -36,9 +36,9 @@ class App extends React.Component<AppProps> {
     return (
       <div>
         <AppHeader />
-        <div className="container">
-          <div className="row">
-            <div className="col-sm">
+        <div className="app">
+          <div>
+            <div>
               <ChaosBagSelector setBagContents={this.props.setBagContents} />
               <ChaosBag
                 bagContents={this.props.bagAndEffects.contents}
@@ -46,7 +46,7 @@ class App extends React.Component<AppProps> {
                 removeToken={this.props.removeToken}
               />
             </div>
-            <div className="col-sm">
+            <div>
               <TokenEffectEditor
                 tokenEffects={this.props.bagAndEffects.effects}
                 setTokenEffect={this.props.setTokenEffect}

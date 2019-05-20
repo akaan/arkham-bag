@@ -1,0 +1,9 @@
+.app-header {
+  @extend .navbar;
+  @extend .navbar-dark;
+  @extend .bg-dark;
+  h1 {
+    @extend .navbar-brand;
+    @extend .mb-0;
+  }
+}

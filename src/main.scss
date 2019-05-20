@@ -1,0 +1,11 @@
+// TODO Ideally each component style would be imported form its component but
+// doing so will result in bootstrap styles imported multiple times due to an
+// issue with sass-loader
+// https://github.com/webpack-contrib/sass-loader/issues/145
+@import "~bootstrap/scss/bootstrap";
+@import "./components/App";
+@import "./components/AppHeader";
+@import "./components/chaosbag/ChaosBag";
+@import "./components/chaosbag/ChaosBagLine";
+@import "./components/chaosbag/ChaosBagSelector";
+@import "./components/tokeneffects/TokenEffectEditor";

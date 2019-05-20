@@ -1,0 +1,9 @@
+.app {
+  @extend .container;
+  & > div {
+    @extend .row;
+    & > div {
+      @extend .col-sm;
+    }
+  }
+}

@@ -23,8 +23,8 @@ export class TokenEffectEditor extends React.Component<TokenEffectEditorProps> {
 
   public render() {
     return (
-      <div className="container p-3">
-        <table className="table table-sm">
+      <div className="token-effect-editor">
+        <table>
           <thead>
             <tr>
               <th>Token</th>

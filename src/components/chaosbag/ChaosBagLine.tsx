@@ -1,6 +1,5 @@
 import { Token } from "arkham-odds";
 import * as React from "react";
-import "./ChaosBagLine.scss";
 
 interface ChaosBagLineProps {
   token: Token;
