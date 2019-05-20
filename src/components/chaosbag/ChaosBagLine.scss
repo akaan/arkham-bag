@@ -1,6 +1,10 @@
 .chaos-bag-line {
+  .controls {
+    @extend .btn-group;
+  }
   button {
     @extend .btn;
+    @extend .btn-sm;
     &.add-token {
       @extend .btn-success;
     }

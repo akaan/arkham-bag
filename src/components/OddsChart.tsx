@@ -23,6 +23,7 @@ export class OddsChart extends React.Component<OddsChartProps> {
       plotOptions: {
         series: {
           label: { connectorAllowed: false },
+          dataLabels: { enabled: true, format: "{point.y:.2f}%" },
           pointStart: -4
         }
       },
@@ -30,8 +31,19 @@ export class OddsChart extends React.Component<OddsChartProps> {
         {
           name: "Odds",
           type: "line",
-          data: skillMinusDiff.map(d =>
-            odds(1, this.props.bagContents, this.props.tokenEffects, success(d))
+          tooltip: {
+            valueDecimals: 2,
+            valueSuffix: "%"
+          },
+          data: skillMinusDiff.map(
+            d =>
+              100 *
+              odds(
+                1,
+                this.props.bagContents,
+                this.props.tokenEffects,
+                success(d)
+              )
           )
         } as Highcharts.SeriesLineOptions
       ],

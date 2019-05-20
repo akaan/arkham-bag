@@ -39,6 +39,12 @@ class App extends React.Component<AppProps> {
         <AppHeader />
         <div className="app">
           <div>
+            <OddsChart
+              bagContents={this.props.bagAndEffects.contents}
+              tokenEffects={this.props.bagAndEffects.effects}
+            />
+          </div>
+          <div>
             <div>
               <ChaosBagSelector setBagContents={this.props.setBagContents} />
               <ChaosBag
@@ -51,18 +57,6 @@ class App extends React.Component<AppProps> {
               <TokenEffectEditor
                 tokenEffects={this.props.bagAndEffects.effects}
                 setTokenEffect={this.props.setTokenEffect}
-              />
-              <OddsTable
-                bagContents={this.props.bagAndEffects.contents}
-                tokenEffects={this.props.bagAndEffects.effects}
-              />
-            </div>
-          </div>
-          <div>
-            <div>
-              <OddsChart
-                bagContents={this.props.bagAndEffects.contents}
-                tokenEffects={this.props.bagAndEffects.effects}
               />
             </div>
           </div>
