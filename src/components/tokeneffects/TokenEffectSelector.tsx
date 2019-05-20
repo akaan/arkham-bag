@@ -50,7 +50,6 @@ const areTokenEffectsEqual = (effect1: TokenEffect, effect2: TokenEffect) => {
 };
 
 const getLabelForTokenEffect = (tokenEffect: TokenEffect) => {
-  console.log(`getLabelForTokenEffect ${tokenEffect}`);
   return Object.keys(labelToTokenEffect).find(label =>
     areTokenEffectsEqual(labelToTokenEffect[label], tokenEffect)
   );
@@ -70,18 +69,20 @@ export class TokenEffectSelector extends React.Component<
 
   public render() {
     return (
-      <select
-        onChange={this.selectedEffectChanged}
-        value={getLabelForTokenEffect(this.state.selectedTokenEffect)}
-      >
-        {Array.from(
-          Object.keys(labelToTokenEffect).map(k => (
-            <option key={k} value={k}>
-              {k}
-            </option>
-          ))
-        )}
-      </select>
+      <form className="token-effect-selector">
+        <select
+          onChange={this.selectedEffectChanged}
+          value={getLabelForTokenEffect(this.state.selectedTokenEffect)}
+        >
+          {Array.from(
+            Object.keys(labelToTokenEffect).map(k => (
+              <option key={k} value={k}>
+                {k}
+              </option>
+            ))
+          )}
+        </select>
+      </form>
     );
   }
 

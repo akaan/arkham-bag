@@ -26,15 +26,19 @@ export class ConfigurationSaver extends React.Component<
 
   public render() {
     return (
-      <div className="configuration-saver">
-        <input
-          type="text"
-          value={this.state.configurationTitle}
-          placeholder="Name of configuration"
-          onChange={this.onConfigurationTitleChanged}
-        />
-        <button onClick={this.onSave}>Save</button>
-      </div>
+      <form className="configuration-saver">
+        <div>
+          <input
+            type="text"
+            value={this.state.configurationTitle}
+            placeholder="Name of configuration"
+            onChange={this.onConfigurationTitleChanged}
+          />
+        </div>
+        <button type="submit" onClick={this.onSave}>
+          Save
+        </button>
+      </form>
     );
   }
 

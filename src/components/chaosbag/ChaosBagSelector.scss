@@ -1,4 +1,7 @@
 .chaos-bag-selector {
   @extend .container;
   @extend .p-3;
+  select {
+    @extend .form-control;
+  }
 }

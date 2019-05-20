@@ -1,0 +1,5 @@
+.token-effect-selector {
+  select {
+    @extend .form-control;
+  }
+}

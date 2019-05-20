@@ -60,7 +60,7 @@ export class ChaosBagSelector extends React.Component<ChaosBagSelectorProps> {
 
   public render() {
     return (
-      <div className="chaos-bag-selector">
+      <form className="chaos-bag-selector">
         <select onChange={this.handleSelection}>
           {Array.from(bagsMap.keys()).map(k => (
             <option key={k} value={k}>
@@ -68,7 +68,7 @@ export class ChaosBagSelector extends React.Component<ChaosBagSelectorProps> {
             </option>
           ))}
         </select>
-      </div>
+      </form>
     );
   }
 }

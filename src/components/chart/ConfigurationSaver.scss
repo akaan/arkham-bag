@@ -1,6 +1,10 @@
 .configuration-saver {
   @extend .container;
   @extend .p-3;
+  @extend .form-inline;
+  & > div {
+    @extend .form-group;
+  }
   button {
     @extend .btn;
     @extend .btn-primary;
