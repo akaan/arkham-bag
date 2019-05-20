@@ -12,6 +12,7 @@ import { BagState } from "../store/bag/types";
 import { AppHeader } from "./AppHeader";
 import { ChaosBag } from "./chaosbag/ChaosBag";
 import { ChaosBagSelector } from "./chaosbag/ChaosBagSelector";
+import { OddsChart } from "./OddsChart";
 import { OddsTable } from "./OddsTable";
 import { TokenEffectEditor } from "./tokeneffects/TokenEffectEditor";
 
@@ -52,6 +53,14 @@ class App extends React.Component<AppProps> {
                 setTokenEffect={this.props.setTokenEffect}
               />
               <OddsTable
+                bagContents={this.props.bagAndEffects.contents}
+                tokenEffects={this.props.bagAndEffects.effects}
+              />
+            </div>
+          </div>
+          <div>
+            <div>
+              <OddsChart
                 bagContents={this.props.bagAndEffects.contents}
                 tokenEffects={this.props.bagAndEffects.effects}
               />
