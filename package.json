@@ -13,7 +13,7 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "arkham-odds": "^0.4.0",
+    "arkham-odds": "0.5.1",
     "bootstrap": "^4.3.1",
     "highcharts": "^7.1.1",
     "highcharts-react-official": "^2.1.3",
