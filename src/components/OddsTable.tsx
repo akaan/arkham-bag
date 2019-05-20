@@ -11,7 +11,7 @@ const skillMinusDiff = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
 export class OddsTable extends React.Component<OddsTableProps> {
   public render() {
     return (
-      <table className="table table-sm">
+      <table className="odds-table">
         <thead>
           <tr>
             <th>Skill value - difficulty</th>
